@@ -4,8 +4,7 @@ from products.models import Product
 
 def cart_contents(request):
     """
-    Ensures that the cart contents are available when rendering
-    every page
+    Ensures that the cart contents are available when rendering every page
     """
     
     cart = request.session.get('cart', {})
@@ -19,5 +18,4 @@ def cart_contents(request):
         product_count += quantity
         cart_items.append({'id':id, 'quantity': quantity, 'product': product})
         
-        return { 'cart_items': cart_items, 'total': total, 'product_count': product_count}
-        
+    return { 'cart_items': cart_items, 'total': total, 'product_count': product_count}
