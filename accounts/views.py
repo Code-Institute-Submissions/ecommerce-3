@@ -10,7 +10,10 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     """A view that displays the index page"""
     return render(request, "index.html")
-
+    
+def home(request):
+    """A view that displays the home page"""
+    return render(request, "home.html")
 
 def logout(request):
     """A view that logs the user out and redirects back to the index page"""
